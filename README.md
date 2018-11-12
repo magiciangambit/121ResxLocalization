@@ -46,3 +46,7 @@ After installing the plugin into your project from nuget: https://www.nuget.org/
 
             MainPage = new TestLocalizationNuget.MainPage();
 		}
+		
+4) To apply localization in a page:
+
+Please take a look at the sample: https://github.com/magiciangambit/121ResxLocalization/blob/121ResxLocalization/TestLocalizationNuget/TestLocalizationNuget/MainPage.xaml
