@@ -26,7 +26,7 @@ namespace TestLocalizationNuget
                 // determine the correct, supported .NET culture
                 var ci = iService.GetCurrentCultureInfo();
                 Plugin._121ResxLocalization.TranslateExtension trE = new Plugin._121ResxLocalization.TranslateExtension(ci);
-                Plugin._121ResxLocalization.TranslateExtension.resourceBasename = "Plugin._121ResxLocalization.Resx.AppResources";
+                Plugin._121ResxLocalization.TranslateExtension.resourceBasename = "TestLocalizationNuget.Resx.AppResources";
                 Plugin._121ResxLocalization.TranslateExtension.resourceAssembly = IntrospectionExtensions.GetTypeInfo(typeof(Plugin._121ResxLocalization.TranslateExtension)).Assembly;
                 Resx.AppResources.Culture = ci; // set the RESX for resource localization
                 iService.SetLocale(ci); // set the Thread for locale-aware methods
