@@ -18,8 +18,8 @@ After installing the plugin into your project from nuget: https://www.nuget.org/
                 // determine the correct, supported .NET culture
                 var ci = iService.GetCurrentCultureInfo();
                 Plugin._121ResxLocalization.TranslateExtension trE = new Plugin._121ResxLocalization.TranslateExtension(ci);
-                Plugin._121ResxLocalization.TranslateExtension.resourceBasename = "TestLocalizationNuget.Resx.AppResources";
-                Plugin._121ResxLocalization.TranslateExtension.resourceAssembly = IntrospectionExtensions.GetTypeInfo(typeof(Plugin._121ResxLocalization.TranslateExtension)).Assembly;
+                 Plugin._121ResxLocalization.TranslateExtension.resourceBasename = "<project name>.Resx.AppResources";
+                Plugin._121ResxLocalization.TranslateExtension.resourceAssembly = IntrospectionExtensions.GetTypeInfo(typeof(< project name>.<any class>)).Assembly;
                 Resx.AppResources.Culture = ci; // set the RESX for resource localization
                 iService.SetLocale(ci); // set the Thread for locale-aware methods
             }
@@ -38,8 +38,8 @@ After installing the plugin into your project from nuget: https://www.nuget.org/
                 // determine the correct, supported .NET culture
                 var ci = iService.GetCurrentCultureInfo();
                 Plugin._121ResxLocalization.TranslateExtension trE = new Plugin._121ResxLocalization.TranslateExtension(ci);
-                Plugin._121ResxLocalization.TranslateExtension.resourceBasename = "TestLocalizationNuget.Resx.AppResources";
-                Plugin._121ResxLocalization.TranslateExtension.resourceAssembly = IntrospectionExtensions.GetTypeInfo(typeof(Plugin._121ResxLocalization.TranslateExtension)).Assembly;
+                 Plugin._121ResxLocalization.TranslateExtension.resourceBasename = "<project name>.Resx.AppResources";
+                Plugin._121ResxLocalization.TranslateExtension.resourceAssembly = IntrospectionExtensions.GetTypeInfo(typeof(< project name>.<any class>)).Assembly;
                 Resx.AppResources.Culture = ci; // set the RESX for resource localization
                 iService.SetLocale(ci); // set the Thread for locale-aware methods
             }
