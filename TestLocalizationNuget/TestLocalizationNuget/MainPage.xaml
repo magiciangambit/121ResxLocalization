@@ -8,6 +8,9 @@
 	<Label Text="Welcome to Xamarin.Forms!" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
-    <Button Text="{i18n:TranslateExtension Text=AddButton}" />
-    
+	<StackLayout>
+		<Label Text="{i18n:Translate NotesLabel}" />
+		<Entry Placeholder="{i18n:Translate NotesPlaceholder}" />
+		<Button Text="{i18n:TranslateExtension Text=AddButton}" />
+	</StackLayout>
 </ContentPage>
