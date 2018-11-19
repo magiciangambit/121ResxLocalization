@@ -5,12 +5,19 @@
              x:Class="TestLocalizationNuget.MainPage" 
              xmlns:i18n="clr-namespace:Plugin._121ResxLocalization;assembly=Plugin._121ResxLocalization">
 
-	<Label Text="Welcome to Xamarin.Forms!" 
+    <StackLayout>
+        <Label Text="Resx Localization" 
            VerticalOptions="Center" 
            HorizontalOptions="Center" />
-	<StackLayout>
-		<Label Text="{i18n:Translate NotesLabel}" />
-		<Entry Placeholder="{i18n:Translate NotesPlaceholder}" />
-		<Button Text="{i18n:TranslateExtension Text=AddButton}" />
-	</StackLayout>
+        <Label Text="{i18n:Translate NotesLabel}" />
+        <Entry Placeholder="{i18n:Translate NotesPlaceholder}" />
+        <Button Text="{i18n:Translate Text=AddButton}" />
+        
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            <Button Text="Set as English" Clicked="OnButtonClicked" />
+            <Button Text="Set as Spanish" Clicked="OnButtonClicked" />
+        </StackLayout>
+
+    </StackLayout>
+	
 </ContentPage>
