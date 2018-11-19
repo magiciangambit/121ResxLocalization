@@ -53,3 +53,34 @@ After installing the plugin into your project from nuget: https://www.nuget.org/
 4) To apply localization in a page:
 
 Please take a look at the sample: https://github.com/magiciangambit/121ResxLocalization/blob/121ResxLocalization/TestLocalizationNuget/TestLocalizationNuget/MainPage.xaml
+
+5) From the sample page, you can also find out how to change language during runtime on the button click:
+
+'''
+
+	void OnButtonClicked(object sender, EventArgs e)
+	{
+	    if (((Button)sender).Text == "Set as English")
+	    {
+		setLanguage("en-US");
+	    }
+	    else if (((Button)sender).Text == "Set as Spanish")
+	    {
+		setLanguage("es-US");
+	    }
+	}
+
+	public void setLanguage(string languageCode)
+	{
+
+	    if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
+	    {
+		CultureInfo ci = new CultureInfo(languageCode);
+		DependencyService.Get<Plugin._121ResxLocalization.I_121ResxLocalization>().SetLocale(ci); // set the Thread for locale-aware methods
+		Resx.AppResources.Culture = ci;
+
+		Application.Current.Properties["currentLanguage"] = languageCode;
+		Application.Current.MainPage = new MainPage();
+	    }
+	}
+'''
