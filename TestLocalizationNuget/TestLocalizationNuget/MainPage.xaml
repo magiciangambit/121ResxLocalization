@@ -17,6 +17,11 @@
             <Button Text="Set as English" Clicked="OnButtonClicked" />
             <Button Text="Set as Spanish" Clicked="OnButtonClicked" />
         </StackLayout>
+	    
+	<Label Text="Resx Localization Using Code" 
+           VerticalOptions="Center" 
+           HorizontalOptions="Center" />
+        <StackLayout x:Name="stack1"/>
 
     </StackLayout>
 	
