@@ -84,3 +84,61 @@ Please take a look at the sample: https://github.com/magiciangambit/121ResxLocal
 	    }
 	}
 '''
+
+6) To use localization programmatically or from code, for example from the sample you can find these lines:
+
+
+
+''' 
+
+		//set localization from coding
+		public void setLocalizationFromCode()
+		{
+		    // create UI controls
+		    var myLabel = new Label();
+		    var myEntry = new Entry();
+		    var myButton = new Button();
+		    var myPicker = new Picker();
+		    myPicker.Items.Add("0");
+		    myPicker.Items.Add("1");
+		    myPicker.Items.Add("2");
+		    myPicker.Items.Add("3");
+		    myPicker.Items.Add("4");
+
+		    // apply translated resources
+		    myLabel.Text = AppResources.NotesLabel;
+		    myEntry.Placeholder = AppResources.NotesPlaceholder;
+		    myPicker.Title = AppResources.PickerName;
+		    myButton.Text = AppResources.AddButton;
+
+		    // button shows an alert, also translated
+		    myButton.Clicked += async (sender, e) =>
+		    {
+			AppResources.Culture = CultureInfo.CurrentCulture;
+			var message = AppResources.AddMessageN;
+			if (myPicker.SelectedIndex <= 0)
+			{
+			    message = AppResources.AddMessage0;
+			}
+			else if (myPicker.SelectedIndex == 1)
+			{
+			    message = AppResources.AddMessage1;
+			}
+			else
+			{
+			    message = String.Format(message, myPicker.Items[myPicker.SelectedIndex]);
+			}
+			await DisplayAlert(message, message, AppResources.CancelButton);
+		    };
+
+		    // add to screen
+		    stack1.VerticalOptions = LayoutOptions.Center;
+		    stack1.HorizontalOptions = LayoutOptions.FillAndExpand;
+		    stack1.Children.Add(myLabel);
+		    stack1.Children.Add(myEntry);
+		    stack1.Children.Add(myButton);
+		    stack1.Children.Add(myPicker);
+
+		}
+		
+'''
